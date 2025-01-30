@@ -9,7 +9,7 @@ export const register = async (req:Request, res: Response): Promise<void> => {
     try {
         const hashedPassword = await hashPassword(password);
 
-        const user = prisma.create({
+        const user = await prisma.create({
             data:{
                 email,
                 password: hashedPassword
@@ -17,8 +17,9 @@ export const register = async (req:Request, res: Response): Promise<void> => {
         })
 
         const token = generateToken(user);
-        res.send(201).json({token});
+        res.status(201).json({token});
     } catch (error) {
-        
+        console.log(error);
+        res.status(500).json({error: "There's an error"});
     }
 }
