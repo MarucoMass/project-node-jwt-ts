@@ -2,8 +2,6 @@
 
 # NODE JS: API REST (CRUD) with PostgreSQL and JWT
 
-This repository contains a REST API built with Node.js and PostgreSQL, allowing CRUD operations (create, read, update, and delete) on users, using JWT (Json Web Token) authentication.
-
 ## 🚀 Usage
 
 1. Clone the repository:
